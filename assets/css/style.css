@@ -1,3 +1,10 @@
+body {
+	background: url("http://cdn.tvguide.co.uk/_ui/images/champions-league/BG.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+
+}
+
 div {
 	border: px solid black;
 }
@@ -8,13 +15,14 @@ img {
 }
 
 .col-md-2 {
-	border: 1px solid black;
+	border: px solid black;
 	height: 200px;
 }
 
 .col-md-12 {
 	text-align: center;
 	margin-bottom: 50px;
+	color: white;
 }
 
 #madridPick {

@@ -31,17 +31,17 @@ $(document).ready(function(){
 		monaco = {
 			'name': 'monaco',
 			'image': '<a href="#"><img src="assets/images/monaco.png" width=180px/></a>',
-			'div': '#24'
+			'div': '#monacoPick'
 		},
 		athletico = {
 			'name': 'athletico',
 			'image': '<a href="#"><img src="assets/images/atletico.png" width=180px/></a>',
-			'div': '#34'
+			'div': '#athleticoPick'
 		},
 		juventus = {
 			'name': 'juventus',
 			'image': '<a href="#"><img src="assets/images/juventus.png" width=180px/></a>',
-			'div': '#33'
+			'div': '#juventusPick'
 		},
 
 
@@ -78,17 +78,68 @@ $(document).ready(function(){
 	// $("#33").append(images[2]);
 	// $("#34").append(images[3]);
 	var userTeam = 0;
+	var pickMadrid = $("#madridPick");
+	var pickMonaco = $("#monacoPick");
+	var pickJuventus = $("#juventusPick");
+	var pickAthletico = $("#athleticoPick");
+	var randomSpot;
 
 	$("#madridPick").on("click", function() {
 		
 		userTeam = $(this).attr("name");
-		console.log("You picked " + "madrid");
+		console.log("You picked " + "Real Madrid");
 
-		var pickMadrid = $("#madridPick");
+		// pickMadrid = $("#madridPick");
 		$("#21").append(pickMadrid);
+		$("#22").append(pickMonaco);
+		$("#25").append(pickAthletico);
+		$("#26").append(pickJuventus);
+	})
+
+	$("#monacoPick").on("click", function() {
+		
+		userTeam = $(this).attr("name");
+		console.log("You picked " + "Monaco");
+
+		// pickMonaco = $("#monacoPick");
+		$("#21").append(pickMonaco);
+
+		// Lets see if this shit works lol
+		$("#22").append(pickMadrid);
+		$("#25").append(pickAthletico);
+		$("#26").append(pickJuventus);
 
 	})
 
+	$("#athleticoPick").on("click", function() {
+		
+		userTeam = $(this).attr("name");
+		console.log("You picked " + "Athletico Madrid");
+
+		// pickAthletico = $("#athleticoPick");
+		$("#21").append(pickAthletico);
+		$("#22").append(pickMadrid);
+		$("#25").append(pickMonaco);
+		$("#26").append(pickJuventus);
+	})
+
+	$("#juventusPick").on("click", function() {
+		
+		userTeam = $(this).attr("name");
+		console.log("You picked " + "Juventus");
+
+		// pickJuventus = $("#juventusPick");
+		$("#21").append(pickJuventus);
+		$("#22").append(pickMadrid);
+		$("#25").append(pickAthletico);
+		$("#26").append(pickMonaco);
+	})
+
+	if (userTeam === "Real Madrid") {
+		console.log("It worked");
+	} else {
+		console.log("Didnt work");
+	}
 
 });
 
