@@ -1,0 +1,22 @@
+div {
+	border: px solid black;
+}
+
+img {
+	border: px solid black;
+
+}
+
+.col-md-2 {
+	border: 1px solid black;
+	height: 200px;
+}
+
+.col-md-12 {
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+#madridPick {
+	border: px solid yellow;
+}
