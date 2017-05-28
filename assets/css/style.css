@@ -1,5 +1,5 @@
 body {
-	background: url("http://cdn.tvguide.co.uk/_ui/images/champions-league/BG.jpg");
+	background: url("../../assets/images/background.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
 
@@ -15,7 +15,7 @@ img {
 }
 
 .col-md-2 {
-	border: px solid black;
+	border: 1px solid black;
 	height: 200px;
 }
 
@@ -27,4 +27,8 @@ img {
 
 #madridPick {
 	border: px solid yellow;
+}
+
+.buttonParent {
+	text-align: center;
 }
