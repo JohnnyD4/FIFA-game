@@ -1,33 +1,16 @@
 $(document).ready(function(){ 
-	console.log("USA");
 	
 	 $("#playButton").hide();
+	 $("#advanceButton").hide();
+	 $("#finalsButton").hide();
 
-	//contrcutor functions
 
-	// team(real, <img src="assets/images/real.png" width=180px/>, 23, 3, 4)
-	// team(monaco, <img src="assets/images/monaco.png" width=180px/>, 24, 3, 4)
-	// team(athletico, <img src="assets/images/atletico.png" width=180px/>, 24, 3, 4)
-	// team(juventus, <img src="assets/images/juventus.png" width=180px/>, 24, 3, 4)
-
-	// function team(){
-
-	// 	this.name = name,
-	// 	this.image = image,
-	// 	this.div = div,
-	// 	this.goal = goal,
-	// 	this.scores = scores
-	// }
-
-	// console.log
 	var teams = [
 
 		real = {
 			'name': 'real',
 			'image': '<img src="assets/images/real.png" width=180px/>',
-			'div': '#madridPick',
-			'goal': '3',
-			'scores': '4'
+			'div': '#madridPick'
 		},
 		monaco = {
 			'name': 'monaco',
@@ -65,11 +48,7 @@ $(document).ready(function(){
 	var goalsMonaco = Math.floor(Math.random() * 4) + 1;
 	var goalsAthletico = Math.floor(Math.random() * 4) + 2;
 	var goalsJuventus = Math.floor(Math.random() * 5) + 2;
-	var finalsTeam1;
-	var finalsTeam2;
 	
-	
-
 	$("#madridPick").on("click", function() {
 		
 		 userTeam = $(this).attr("data-name");
@@ -89,7 +68,7 @@ $(document).ready(function(){
 
 	$("#monacoPick").on("click", function() {
 		
-		userTeam = $(this).attr("name");
+		userTeam = $(this).attr("data-teams");
 		console.log("You picked " + "Monaco");
 
 		
@@ -136,10 +115,16 @@ $(document).ready(function(){
 
 		console.log("Monaco scored " + goalsMonaco + " goals");
 		console.log("Juventus scored " + goalsJuventus + " goals");
+
+	
+
+
 	
 	if (goalsMadrid > goalsAthletico) {
 		$(".madWin").append("Real Madrid wins!");
 		console.log("Real Madrid wins!");
+		// $("#33").append(pickMadrid);
+		// pickAthletico.hide();
 		// (finalsTeam1).append(pickMadrid);
 		// $("#33").append(finalsTeam1);
 
@@ -147,21 +132,62 @@ $(document).ready(function(){
 		console.log("Athletico Madrid wins!");
 		// (finalsTeam1).append(pickAthletico);
 		// $("#33").append(finalsTeam1);
+		// $("#33").append(pickAthletico);
+		// pickMadrid.hide();
 	}
 
 	if (goalsMonaco > goalsJuventus) {
 		console.log("Monaco wins!");
 		// (finalsTeam2).append(pickMonaco);
+		// $("#34").append(pickMonaco);
+		// pickJuventus.hide();
 	} else {
 		console.log("Juventus wins!");
 		// (finalsTeam2).append(pickJuventus);
+		// $("#34").append(pickJuventus);
+		// pickMonaco.hide();
 	}
 
+	pickMadrid.append(goalsMadrid);
+	pickAthletico.append(goalsAthletico);
+	pickMonaco.append(goalsMonaco);
+	pickJuventus.append(goalsJuventus);
+
+	
+
+	$("#33").append(advanceButton);
+
+	$("#advanceButton").show();
+	$("#playButton").hide();
 	})
 
 	$(".teams").on("click", function() {
 		$("#pickTeam").hide();
 		$("#playButton").show();
+
+	})
+
+	$("#advanceButton").on("click", function() {
+		if (goalsMadrid > goalsAthletico) {
+			$("#33").append(pickMadrid);
+			pickAthletico.hide();
+
+		} else {
+			console.log("Athletico Madrid wins!");
+			$("#33").append(pickAthletico);
+			pickMadrid.hide();
+		}
+
+		if (goalsMonaco > goalsJuventus) {
+			$("#34").append(pickMonaco);
+			pickJuventus.hide();
+
+		} else {
+			$("#34").append(pickJuventus);
+			pickMonaco.hide();
+		}
+
+		$("#advanceButton").hide();
 
 	})
 

@@ -2,7 +2,7 @@ body {
 	background: url("../../assets/images/background.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
-
+	text-align: center;
 }
 
 div {
@@ -15,8 +15,11 @@ img {
 }
 
 .col-md-2 {
-	border: 1px solid black;
+	border: px solid black;
 	height: 200px;
+	font-size: 35px;
+	color: white;
+
 }
 
 .col-md-12 {
@@ -31,4 +34,8 @@ img {
 
 .buttonParent {
 	text-align: center;
+}
+
+.adv {
+	color: #494747;
 }
